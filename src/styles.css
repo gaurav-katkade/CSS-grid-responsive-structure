@@ -1,0 +1,64 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+body {
+  font-family: sans-serif;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: 3rem 30rem 5rem 5rem 10rem;
+  /* background-color:red; */
+  grid-template-areas:
+    "header menu menu menu" "hero hero hero hero"
+    "main main . image" "main main . extra" "banner banner banner banner";
+}
+.nav {
+  grid-area: header;
+  background-color: aqua;
+}
+.menu {
+  grid-area: menu;
+  background-color: blueviolet;
+}
+.hero {
+  grid-area: hero;
+  background-color: crimson;
+}
+.main {
+  grid-area: main;
+  background-color: darkgreen;
+}
+.image {
+  grid-area: image;
+  background-color: darkred;
+  /* overflow:scroll; */
+  /* object-fit:contain; */
+}
+.image img {
+  object-fit: contain;
+  height: 100%;
+  width: 100%;
+}
+.extra {
+  grid-area: extra;
+  background-color: goldenrod;
+}
+.banner {
+  grid-area: banner;
+  background-color: dodgerblue;
+}
+@media screen and (max-width: 480px) {
+  body {
+    grid-template-columns: 1fr;
+    grid-template-rows: 3rem 3rem 30rem 5rem 5rem 10rem 10rem;
+    grid-template-areas:
+      "header"
+      "menu"
+      "hero"
+      "image"
+      "main"
+      "extra"
+      "banner";
+  }
+}
